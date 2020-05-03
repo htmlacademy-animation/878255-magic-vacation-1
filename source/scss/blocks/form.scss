@@ -2,6 +2,11 @@
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
+  animation-name: grow;
+  animation-timing-function: ease-out;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
 }
 
 .form__label {
