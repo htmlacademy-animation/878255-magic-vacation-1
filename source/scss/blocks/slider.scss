@@ -5,6 +5,7 @@
 
   .swiper-wrapper {
     min-height: 100vh;
+    box-sizing: border-box;
 
     @media (max-width: $tablet) and (orientation: portrait) {
       min-height: calc(var(--vh, 1vh) * 100);
@@ -274,22 +275,4 @@
       background-color: $c-light;
     }
   }
-}
-
-.swiper-slide-active,
-.swiper-slide-next {
-  & .slider__item-text {
-    animation-name: fadeIn, shiftLeft;
-    animation-timing-function: ease-out;
-    animation-duration: 0.5s;
-    animation-fill-mode: both;
-  }
-}
-
-.swiper-slide-active .slider__item-text {
-  animation-delay: 0.7s;
-}
-
-.swiper-slide-next .slider__item-text {
-  animation-delay: 1s;
 }
