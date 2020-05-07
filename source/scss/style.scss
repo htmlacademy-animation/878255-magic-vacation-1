@@ -1,6 +1,6 @@
 @import "general/variables.scss";
-@import "vendor/normalize.scss";
-@import "vendor/swiper.scss";
+@import "~normalize.css/normalize.css";
+@import "~swiper/css/swiper.css";
 @import "general/mixins.scss";
 @import "general/fonts.scss";
 @import "general/scaffolding.scss";
@@ -19,5 +19,3 @@
 @import "blocks/screen.scss";
 @import "blocks/slider.scss";
 @import "blocks/social-block.scss";
-
-@import "animations.scss";
