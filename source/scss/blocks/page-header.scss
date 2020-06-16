@@ -275,14 +275,6 @@
       background-color: $c-light;
       display: block;
       left: 0;
-      transform: scaleX(0);
-      transform-origin: right;
-      transition: transform 0.4s ease, background-color 0.35s ease;
-
-      @media (min-width: $stop-scaling) {
-        left: -5px;
-        right: -5px;
-      }
 
       @media (max-width: $tablet) and (orientation: portrait) {
         left: 0;
@@ -299,7 +291,7 @@
 
     .loaded &.active {
       &::after {
-        transition-delay: 0.6s;
+		transition-delay: 0.6s;
         transform-origin: left;
         transform: scaleX(1);
       }
@@ -311,9 +303,9 @@
       outline: none;
 
       &::after {
-        background-color: $c-purple;
         transform-origin: left;
         transform: scaleX(1);
+        background-color: $c-purple;
       }
     }
   }
