@@ -37,3 +37,12 @@
     width: 100%;
   }
 }
+
+@keyframes appear-share-button {
+  from {
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}

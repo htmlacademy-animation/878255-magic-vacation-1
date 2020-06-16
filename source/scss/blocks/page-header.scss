@@ -144,14 +144,12 @@
   display: flex;
   align-items: center;
   opacity: 0;
-  transform: translateY(-1rem);
   transition-property: opacity, transform;
   transition-delay: .4s;
   @include initial-appearing-function;
 
   .loaded & {
     opacity: 1;
-    transform: translateY(0);
   }
 
   @media (max-width: $tablet) and (orientation: portrait) {
@@ -275,6 +273,14 @@
       background-color: $c-light;
       display: block;
       left: 0;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.4s ease, background-color 0.35s ease;
+
+      @media (min-width: $stop-scaling) {
+        left: -5px;
+        right: -5px;
+      }
 
       @media (max-width: $tablet) and (orientation: portrait) {
         left: 0;
@@ -291,7 +297,7 @@
 
     .loaded &.active {
       &::after {
-		transition-delay: 0.6s;
+		    transition-delay: 0.6s, 0s;
         transform-origin: left;
         transform: scaleX(1);
       }
