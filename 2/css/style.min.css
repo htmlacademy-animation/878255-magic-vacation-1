@@ -3208,9 +3208,9 @@ img {
     z-index: -1;
     transition-duration: 0.35s;
     animation-name: appear-share-button;
-    animation-duration: 0.5s;
+    animation-duration: 0.35s;
     animation-timing-function: cubic-bezier(0.75, 1.9, 0.7, 1);
-    animation-delay: 0.8s;
+    animation-delay: 0.75s;
     animation-fill-mode: both; }
   .social-block__toggler svg {
     position: absolute;
@@ -3411,7 +3411,7 @@ img {
 
 @keyframes appear-share-button {
   from {
-    transform: translate(-50%, -50%) scale(0.5); }
+    transform: translate(-50%, -50%) scale(0); }
   to {
     transform: translate(-50%, -50%) scale(1); } }
 
