@@ -28,7 +28,7 @@
   }
 
   @media (max-width: $mobile) and (orientation: landscape) {
-    display: none;  
+    display: none;
   }
 
   &::before {
@@ -41,7 +41,7 @@
     border: 2px solid $c-light;
     z-index: -1;
     transition-duration: 0.35s;
-    animation-name: appear-share-button;
+    animation-name: appearShareButton;
     animation-duration: 0.35s;
     animation-timing-function: cubic-bezier(0.75, 1.9, 0.7, 1);
     animation-delay: 0.75s;
