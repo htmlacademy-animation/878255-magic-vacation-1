@@ -1,19 +1,25 @@
 import throttle from 'lodash/throttle';
 
+const HISTORY_SCREEN_INDEX = 1;
+const PRIZES_SCREEN_INDEX = 2;
+const COVER_PAGE_DURATION_MS = 500;
+
 export default class FullPageScroll {
   constructor() {
     this.THROTTLE_TIMEOUT = 2000;
 
     this.screenElements = document.querySelectorAll(`.screen:not(.screen--result)`);
     this.menuElements = document.querySelectorAll(`.page-header__menu .js-menu-link`);
+    this.screenBackground = document.querySelector(`.screen--background`);
 
     this.activeScreen = 0;
+    this.previousScreen = 0;
     this.onScrollHandler = this.onScroll.bind(this);
     this.onUrlHashChengedHandler = this.onUrlHashChanged.bind(this);
   }
 
   init() {
-    document.addEventListener(`wheel`, throttle(this.onScrollHandler, this.THROTTLE_TIMEOUT, {trailing: true}));
+    document.addEventListener(`wheel`, throttle(this.onScrollHandler, this.THROTTLE_TIMEOUT, {trailing: false}));
     window.addEventListener(`popstate`, this.onUrlHashChengedHandler);
 
     this.onUrlHashChanged();
@@ -22,15 +28,31 @@ export default class FullPageScroll {
   onScroll(evt) {
     const currentPosition = this.activeScreen;
     this.reCalculateActiveScreenPosition(evt.deltaY);
+    const isForwardDirection = evt.deltaY > 0;
     if (currentPosition !== this.activeScreen) {
-      this.changePageDisplay();
+      if (this.activeScreen === PRIZES_SCREEN_INDEX && isForwardDirection) {
+        this.coverPage();
+        setTimeout(() => {
+          this.changePageDisplay();
+        }, COVER_PAGE_DURATION_MS);
+      } else {
+        this.changePageDisplay();
+      }
     }
   }
 
   onUrlHashChanged() {
     const newIndex = Array.from(this.screenElements).findIndex((screen) => location.hash.slice(1) === screen.id);
+    this.previousScreen = this.activeScreen;
     this.activeScreen = (newIndex < 0) ? 0 : newIndex;
-    this.changePageDisplay();
+    if (this.activeScreen === PRIZES_SCREEN_INDEX && this.previousScreen === HISTORY_SCREEN_INDEX) {
+      this.coverPage();
+      setTimeout(() => {
+        this.changePageDisplay();
+      }, COVER_PAGE_DURATION_MS);
+    } else {
+      this.changePageDisplay();
+    }
   }
 
   changePageDisplay() {
@@ -74,5 +96,12 @@ export default class FullPageScroll {
     } else {
       this.activeScreen = Math.max(0, --this.activeScreen);
     }
+  }
+
+  coverPage() {
+    this.screenBackground.classList.add(`active`);
+    setTimeout(() => {
+      this.screenBackground.classList.remove(`active`);
+    }, COVER_PAGE_DURATION_MS);
   }
 }
