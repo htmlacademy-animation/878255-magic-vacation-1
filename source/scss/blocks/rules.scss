@@ -122,6 +122,7 @@
   margin: 0 0 6.2rem;
   padding-top: 0.6rem;
   padding-left: 6.5rem;
+  will-change: transform;
   break-inside: avoid;
 
   @media (min-width: $stop-scaling) {
@@ -217,7 +218,6 @@ $rules-items-count: 4;
 @for $i from 1 through $rules-items-count {
   .rules__item:nth-child(#{$i}) {
     &:before {
-      will-change: transform, color;
       transform: scale(0);
       animation-name: numberPulse;
       animation-duration: 0.4s;
@@ -227,7 +227,6 @@ $rules-items-count: 4;
     }
 
     p {
-      will-change: transform, opacity;
       opacity: 0;
       animation-name: shiftLeft, fadeIn;
       animation-duration: 0.35s;
