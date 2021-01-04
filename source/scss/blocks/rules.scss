@@ -211,3 +211,18 @@
     right: 1.5rem;
   }
 }
+
+$rules-items-count: 4;
+
+@for $i from 1 through $rules-items-count {
+  .rules__item:nth-child(#{$i}) {
+    p {
+      opacity: 0;
+      animation-name: shiftLeft, fadeIn;
+      animation-duration: 0.25s;
+      animation-delay: #{(0.1s*$i) + 0.25s};
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+    }
+  }
+}
