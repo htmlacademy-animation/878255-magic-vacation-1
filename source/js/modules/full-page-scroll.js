@@ -1,4 +1,5 @@
 import throttle from 'lodash/throttle';
+import {animateTypography} from "./typography";
 
 const HISTORY_SCREEN_INDEX = 1;
 const PRIZES_SCREEN_INDEX = 2;
@@ -59,6 +60,7 @@ export default class FullPageScroll {
     this.changeVisibilityDisplay();
     this.changeActiveMenuItem();
     this.emitChangeDisplayEvent();
+    this.animateAccentTypography();
   }
 
   changeVisibilityDisplay() {
@@ -88,6 +90,10 @@ export default class FullPageScroll {
     });
 
     document.body.dispatchEvent(event);
+  }
+
+  animateAccentTypography () {
+    animateTypography(this.activeScreen);
   }
 
   reCalculateActiveScreenPosition(delta) {

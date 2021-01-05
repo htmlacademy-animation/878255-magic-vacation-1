@@ -1,14 +1,14 @@
 .text__word {
   display: inline-block;
-  margin: 0 5px;
   overflow: hidden;
 }
 
 .text__word > span {
-  transform: translate3d(0, 1em, 0);
+  transform: translate3d(0, 1.1em, 0);
   display: inline-block;
+  vertical-align: sub;
 }
 
-.text.active .text__word > span {
+.accent-typography.active .text__word > span {
   transform: translate3d(0, 0, 0);
 }
