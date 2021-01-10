@@ -28,16 +28,6 @@
   }
 }
 
-@keyframes grow {
-  0% {
-    width: 35%;
-  }
-
-  100% {
-    width: 100%;
-  }
-}
-
 @keyframes appearShareButton {
   from {
     transform: translate(-50%, -50%) scale(0);
