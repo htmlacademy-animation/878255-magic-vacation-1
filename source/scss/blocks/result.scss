@@ -305,14 +305,34 @@
 }
 
 @keyframes suitcase {
+  0% {
+    opacity: 0;
+    transform: rotate(-8deg) translateX(-24%) translateY(19rem) scale(0);
+  }
 
+  0.01% {
+    opacity: 1;
+  }
+
+  13.7% {
+    transform: rotate(-8deg) translateX(-4%) translateY(-3rem) scale(1);
+  }
+
+  22.5% {
+    transform: rotate(-8deg) translateX(-8%) translateY(0) scale(1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotate(-8deg) translateX(-8%) translateY(0) scale(1);
+  }
 }
 
 
 @keyframes flamingo {
  0% {
    opacity: 0;
-   transform: rotate(-26deg) translateX(-37%) translateY(14rem);
+   transform: rotate(-26deg) translateX(-33%) translateY(14rem);
  }
 
   15.5% {
@@ -320,12 +340,12 @@
   }
 
   17.2% {
-    transform: rotate(-4deg) translateX(-37%) translateY(0);
+    transform: rotate(-4deg) translateX(-33%) translateY(0);
   }
 
   100% {
     opacity: 1;
-    transform: rotate(-4deg) translateX(-37%) translateY(0);
+    transform: rotate(-4deg) translateX(-33%) translateY(0);
   }
 }
 
