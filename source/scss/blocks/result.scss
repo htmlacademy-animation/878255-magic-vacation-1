@@ -254,6 +254,7 @@
     max-width: 373px;
     transform-origin: left;
     transform: rotate(1deg) translateX(50%);
+    animation: leaf-1 1.74s linear 0.33s both;
   }
 
   &-leaf-blue-2 {
@@ -261,6 +262,7 @@
     width: 27rem;
     max-width: 360px;
     transform: translateX(-75%);
+    animation: lead-2 1.74s linear 0.33s both;
   }
 
   &-leaf-green {
@@ -269,6 +271,7 @@
     max-width: 453px;
     transform: rotate(0deg) translateX(51%);
     transform-origin: left;
+    animation: leaf-green 1.74s linear 0.33s both;
   }
 
   &-suitcase {
@@ -276,13 +279,55 @@
     width: 35rem;
     max-width: 466px;
     transform: rotate(-8deg) translateX(-8%);
+    animation: suitcase 1.74s linear 0.33s both;
   }
 
   &-flamingo {
     top: 41px;
     width: 27rem;
     max-width: 360px;
-    transform: rotate(-4deg) translateX(-37%);
+    transform-origin: center bottom;
+    animation: flamingo 1.74s linear 0.33s both;
   }
 }
 
+
+@keyframes leaf-1 {
+
+}
+
+@keyframes leaf-2 {
+
+}
+
+@keyframes leaf-green {
+
+}
+
+@keyframes suitcase {
+
+}
+
+
+@keyframes flamingo {
+ 0% {
+   opacity: 0;
+   transform: rotate(-26deg) translateX(-37%) translateY(14rem);
+ }
+
+  15.5% {
+    opacity: 1;
+  }
+
+  17.2% {
+    transform: rotate(-4deg) translateX(-37%) translateY(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotate(-4deg) translateX(-37%) translateY(0);
+  }
+}
+
+// 58 кадров - длительность анимации картинки( до момента фламинго туда-сюда
+// 0.03s
