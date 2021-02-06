@@ -22,38 +22,6 @@
   }
 }
 
-.result__image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: -1;
-
-  @media (orientation: portrait) {
-    left: -1rem;
-    right: -1rem;
-  }
-
-  picture {
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
-
-  img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-}
-
 .result__title {
   margin: 0 auto 2rem;
   color: $c-light;
@@ -268,3 +236,53 @@
     }
   }
 }
+
+.result--prize .result__image {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+
+  & img {
+    position: absolute;
+  }
+
+  &-leaf-blue-1 {
+    top: -83px;
+    width: 28rem;
+    max-width: 373px;
+    transform-origin: left;
+    transform: rotate(1deg) translateX(50%);
+  }
+
+  &-leaf-blue-2 {
+    top: 80px;
+    width: 27rem;
+    max-width: 360px;
+    transform: translateX(-75%);
+  }
+
+  &-leaf-green {
+    top: 109px;
+    width: 34rem;
+    max-width: 453px;
+    transform: rotate(0deg) translateX(51%);
+    transform-origin: left;
+  }
+
+  &-suitcase {
+    top: -69px;
+    width: 35rem;
+    max-width: 466px;
+    transform: rotate(-8deg) translateX(-8%);
+  }
+
+  &-flamingo {
+    top: 41px;
+    width: 27rem;
+    max-width: 360px;
+    transform: rotate(-4deg) translateX(-37%);
+  }
+}
+
