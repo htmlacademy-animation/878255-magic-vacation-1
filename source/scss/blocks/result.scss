@@ -268,7 +268,6 @@
     top: 109px;
     width: 34rem;
     max-width: 453px;
-    transform: rotate(0deg) translateX(51%);
     transform-origin: left;
     animation: leaf-green 1.74s linear 0.33s both;
   }
@@ -326,11 +325,11 @@
 @keyframes leaf-2 {
   0% {
     opacity: 0;
-    transform: translateX(-75%) rotate(48deg);
   }
 
   12.8% {
     opacity: 0;
+    transform: translateX(-75%) rotate(48deg);
   }
 
   31.7% {
@@ -357,7 +356,35 @@
 }
 
 @keyframes leaf-green {
+  0% {
+    opacity: 0;
+  }
 
+  17.2% {
+    opacity: 0;
+    transform: rotate(-5deg) translateX(51%);
+  }
+
+  35.9% {
+    opacity: 1;
+    transform: rotate(4deg) translateX(51%);
+  }
+
+  56.6% {
+    transform: rotate(-2deg) translateX(51%);
+  }
+
+  75% {
+    transform: rotate(1deg) translateX(51%);
+  }
+
+  93.4% {
+    transform: rotate(-1deg) translateX(51%);
+  }
+
+  100% {
+    transform: rotate(0deg) translateX(51%);
+  }
 }
 
 @keyframes suitcase {
@@ -408,6 +435,7 @@
 // 58 кадров - длительность анимации картинки( до момента фламинго туда-сюда
 // 0.03s
 
+// 3 = 5.17%
 // 7 = 12%
 // 8 = 13.7%
 // 9 = 15.5%
