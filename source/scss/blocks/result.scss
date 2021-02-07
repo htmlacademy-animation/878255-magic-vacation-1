@@ -252,8 +252,7 @@
     top: -83px;
     width: 28rem;
     max-width: 373px;
-    transform-origin: left;
-    transform: rotate(1deg) translateX(50%);
+    transform-origin: left bottom;
     animation: leaf-1 1.74s linear 0.33s both;
   }
 
@@ -261,8 +260,7 @@
     top: 80px;
     width: 27rem;
     max-width: 360px;
-    transform: translateX(-75%);
-    animation: lead-2 1.74s linear 0.33s both;
+    animation: leaf-2 1.74s linear 0.33s both;
   }
 
   &-leaf-green {
@@ -293,11 +291,55 @@
 
 
 @keyframes leaf-1 {
+  0% {
+    opacity: 0;
+  }
 
+  12.8% {
+    opacity: 0;
+    transform: rotate(-13deg) translateX(50%);
+  }
+
+  26.5% {
+    opacity: 1;
+    transform: rotate(10deg) translateX(50%);
+  }
+
+  45.4% {
+    transform: rotate(-2deg) translateX(50%);
+  }
+
+  64.3% {
+    transform: rotate(3deg) translateX(50%);
+  }
+
+  79.8% {
+    transform: rotate(-1deg) translateX(50%);
+  }
+
+  95.3% {
+    transform: rotate(2deg) translateX(50%);
+  }
+
+  100% {
+    transform: rotate(1deg) translateX(50%);
+  }
 }
 
 @keyframes leaf-2 {
+  0% {
+    opacity: 0;
+    transform: translateX(-75%);
+  }
 
+  12.8% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(-75%);
+  }
 }
 
 @keyframes leaf-green {
@@ -351,3 +393,9 @@
 
 // 58 кадров - длительность анимации картинки( до момента фламинго туда-сюда
 // 0.03s
+
+// 7 = 12%
+// 8 = 13.7%
+// 9 = 15.5%
+// 10 = 17.2%
+// 11 = 18.9%
