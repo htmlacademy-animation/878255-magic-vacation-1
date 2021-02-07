@@ -285,7 +285,7 @@
     width: 27rem;
     max-width: 360px;
     transform-origin: center bottom;
-    animation: flamingo 1.74s linear 0.33s both;
+    animation: flamingo 1.74s linear 0.33s both, flamingo-loop 1s linear 0.66s forwards infinite alternate;
   }
 }
 
@@ -432,12 +432,16 @@
   }
 }
 
-// 58 кадров - длительность анимации картинки( до момента фламинго туда-сюда
-// 0.03s
+@keyframes flamingo-loop {
+   0% {
+     transform: rotate(0) translateY(0)  translateX(-33%);
+   }
 
-// 3 = 5.17%
-// 7 = 12%
-// 8 = 13.7%
-// 9 = 15.5%
-// 10 = 17.2%
-// 11 = 18.9%
+  50% {
+    transform: rotate(-1deg) translateY(7px)  translateX(-33%);
+  }
+
+  100% {
+    transform: rotate(-3deg) translateY(10px)  translateX(-33%);
+  }
+}

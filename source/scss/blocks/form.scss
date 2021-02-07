@@ -164,7 +164,6 @@
 
 .form--result {
   .form__field {
-    display: none;
     width: calc(100% - 31rem);
 
     @media (min-width: $stop-scaling) {
