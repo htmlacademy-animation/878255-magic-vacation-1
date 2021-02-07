@@ -1,3 +1,5 @@
 export default () => document.addEventListener(`DOMContentLoaded`, () => {
-  document.body.classList.add(`loaded`);
+  setTimeout(() => {
+    document.body.classList.add(`loaded`);
+  }, 0);
 });
