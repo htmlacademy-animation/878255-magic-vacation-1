@@ -260,6 +260,7 @@
     top: 80px;
     width: 27rem;
     max-width: 360px;
+    transform-origin: right 50%;
     animation: leaf-2 1.74s linear 0.33s both;
   }
 
@@ -300,25 +301,21 @@
     transform: rotate(-13deg) translateX(50%);
   }
 
-  26.5% {
+  28.5% {
     opacity: 1;
     transform: rotate(10deg) translateX(50%);
   }
 
-  45.4% {
+  48.4% {
     transform: rotate(-2deg) translateX(50%);
   }
 
-  64.3% {
+  66.3% {
     transform: rotate(3deg) translateX(50%);
   }
 
   79.8% {
     transform: rotate(-1deg) translateX(50%);
-  }
-
-  95.3% {
-    transform: rotate(2deg) translateX(50%);
   }
 
   100% {
@@ -329,16 +326,33 @@
 @keyframes leaf-2 {
   0% {
     opacity: 0;
-    transform: translateX(-75%);
+    transform: translateX(-75%) rotate(48deg);
   }
 
   12.8% {
     opacity: 0;
   }
 
+  31.7% {
+    opacity: 1;
+    transform: translateX(-75%) rotate(-10deg);
+  }
+
+  50.6% {
+    transform: translateX(-75%) rotate(8deg);
+  }
+
+  69.5% {
+    transform: translateX(-75%) rotate(-4deg);
+  }
+
+  88.4% {
+    transform: translateX(-75%) rotate(2deg);
+  }
+
   100% {
     opacity: 1;
-    transform: translateX(-75%);
+    transform: translateX(-75%) rotate(0);
   }
 }
 
